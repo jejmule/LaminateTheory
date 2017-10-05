@@ -90,7 +90,7 @@ class ply(object):
         if len(orientation) == len(orientation):
             self.length = len(orientation)
         else:
-            print 'error, orientation list and grammage are not equal in length'
+            print('error, orientation list and grammage are not equal in length')
     
     def __repr__(self):
         out = '\nmaterial :'+str(self.material)+'\n'

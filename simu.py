@@ -41,18 +41,26 @@ alu_04 = ply(titanal,[0],[0.4])
 alu_06 = ply(titanal,[0],[0.6])
 alu_08 = ply(titanal,[0],[0.8])
 mdf_3 = ply(mdf,[0],[3])
+mdf_8 = ply(mdf,[0],[10])
 mdf_10 = ply(mdf,[0],[10])
 
 UD_C = ply(carbon,[0],[0.174*25/90])
 
-lin30 = ply(flax,[-45,-30,30,45],[.150,.150,.150,.150])
+LinBi = ply(flax,[-45,45],[.150,.150])
+LinUD = ply(flax,[0],[.300])
 UD_C_full = ply(carbon,[0],[0.1])
 
+UD_C_test = ply(carbon,[0],[0.1])
 
+#compo_0 = laminate([triax_V_1100,mdf_3,triax_V_1100],[1,1,-1])
+#compo_1 = laminate([UD_C,triax_V_860,mdf_3,triax_V_860,UD_C],[1,1,1,-1,1])
+#compo_2 = laminate([lin30,mdf_3,lin30],[1,1,-1])
 
-compo_0 = laminate([triax_V_1100,mdf_3,triax_V_1100],[1,1,-1])
-compo_1 = laminate([UD_C,triax_V_860,mdf_3,triax_V_860,UD_C],[1,1,1,-1,1])
-compo_2 = laminate([lin30,mdf_3,lin30],[1,1,-1])
+AntiConfFlax = laminate([LinUD,LinBi,mdf_8,LinBi,LinUD],[1,1,1,-1,1])
+print(AntiConfFlax)
+AntiConfFlaxC200 = laminate([UD_C_test,LinBi,mdf_8,LinBi,UD_C_test],[1,1,1,-1,1])
+print(AntiConfFlaxC200)
+
 #compo_1 = laminate([alu_04,mdf_3,alu_04],[1,1,1])
 #compo_2 = laminate([UD_C_200,biax_C_200,mdf_3,biax_C_200,UD_C_200],[1,1,1,1,1])
 #compo_3 = laminate([UD_C_200,serge_C_200,mdf_3,serge_C_200,UD_C_200],[1,1,1,-1,1])
@@ -69,9 +77,9 @@ compo_2 = laminate([lin30,mdf_3,lin30],[1,1,-1])
 
 
 
-print compo_0
-print compo_1
-print compo_2
+#print(compo_0)
+#print(compo_1)
+#print(compo_2)
 """
 print compo_2
 print compo_3
